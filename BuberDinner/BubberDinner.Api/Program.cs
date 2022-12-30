@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // en vez de agregar la dependencia en cada "sub programa", genera un metodo en  Application
 builder.Services
     .AddApplication()
-    .AddInfrastructure()
+    .AddInfrastructure(builder.Configuration)
     ;
 
 builder.Services.AddControllers();

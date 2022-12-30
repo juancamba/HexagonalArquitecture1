@@ -1,7 +1,6 @@
+using BubberDinner.Domain.Entities;
+
 public record AuthenticationResult(
-       Guid id,
-    string FirstName,
-    string LastName,
-    string Email,
+    User User,
     string Token
 );
