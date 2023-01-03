@@ -1,3 +1,4 @@
+using BubberDinner.Application.Common.Error;
 using BubberDinner.Application.Common.Interfaces.Authentication;
 using BubberDinner.Application.Common.Persistence;
 using BubberDinner.Domain.Entities;
@@ -20,7 +21,7 @@ public class AuthenticationService : IAuthenticationService
         //1 validate que el user no existe
         if(_userRepository.GetUserByEmail(email) is not null)
         {
-            throw new Exception("El usaurio ya existe");
+            throw new DuplicateEmailException();
         }
 
 
